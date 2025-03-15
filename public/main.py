@@ -6,7 +6,14 @@ def DisplayAllMicrophonesAvailable():
 
 if __name__ == "__main__":
     r = sr.Recognizer()
-    mic = sr.Microphone()
+    mic = sr.Microphone(device_index=2)
         
     # DisplayAllMicrophonesAvailable()
-    mic.list_microphone_names()
+    
+    print("start listening")
+    with mic as source:
+        r.adjust_for_ambient_noise(source)
+        audio = r.listen(source)
+        print("recognition")
+        r.recognize_google(audio)
+    
