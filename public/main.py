@@ -5,4 +5,8 @@ def DisplayAllMicrophonesAvailable():
         print("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
 
 if __name__ == "__main__":
-    DisplayAllMicrophonesAvailable()
+    r = sr.Recognizer()
+    mic = sr.Microphone()
+        
+    # DisplayAllMicrophonesAvailable()
+    mic.list_microphone_names()
