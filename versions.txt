@@ -1,0 +1,1 @@
+0.0.1 : No AI implemented, voice recognition, manage electronic stuff such as Arduino, detect only few words to execute task.
